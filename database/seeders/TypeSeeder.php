@@ -6,7 +6,7 @@ use App\Models\Type;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class TypesSeeder extends Seeder
+class TypeSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,34 +15,34 @@ class TypesSeeder extends Seeder
     {
         $types = [
             [
-                'name' => "E-commerce",
+                'name' => "E-commerce"
             ],
             [
-                'name' => "Finanza Personale",
+                'name' => "Finanza Personale"
             ],
             [
-                'name' => "Istruzione",
+                'name' => "Istruzione"
             ],
             [
-                'name' => "Comunicazione",
+                'name' => "Comunicazione"
             ],
             [
-                'name' => "Produttività",
+                'name' => "Produttività"
             ],
             [
-                'name' => "Ristorazione",
+                'name' => "Ristorazione"
             ],
             [
-                'name' => "Analisi dei Dati",
+                'name' => "Analisi dei Dati"
             ],
             [
-                'name' => "Salute",
+                'name' => "Salute"
             ],
             [
-                'name' => "Organizzazione",
+                'name' => "Organizzazione"
             ],
             [
-                'name' => "Tecnologia",
+                'name' => "Tecnologia"
             ]
         ];
         foreach ($types as $type) {
