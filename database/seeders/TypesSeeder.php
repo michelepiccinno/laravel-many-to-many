@@ -15,19 +15,36 @@ class TypesSeeder extends Seeder
     {
         $types = [
             [
-                'name' => 'attualità',
-                'description' => 'i migliori scoop',
+                'name' => "E-commerce",
             ],
             [
-                'name' => 'scienze',
-                'description' => 'scopri il mondo delle scienze',
+                'name' => "Finanza Personale",
             ],
             [
-                'name' => 'sport',
-                'description' => 'i migliori risultati sportivi',
+                'name' => "Istruzione",
+            ],
+            [
+                'name' => "Comunicazione",
+            ],
+            [
+                'name' => "Produttività",
+            ],
+            [
+                'name' => "Ristorazione",
+            ],
+            [
+                'name' => "Analisi dei Dati",
+            ],
+            [
+                'name' => "Salute",
+            ],
+            [
+                'name' => "Organizzazione",
+            ],
+            [
+                'name' => "Tecnologia",
             ]
         ];
-
         foreach ($types as $type) {
             $newType = new Type();
             $newType->fill($type);

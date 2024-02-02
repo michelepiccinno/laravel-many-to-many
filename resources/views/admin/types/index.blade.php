@@ -7,7 +7,7 @@
                 <div class="col-md-4">
                     <div class="card">
                         <div class="card-header">{{ $type->name }}</div>
-                        <div class="card-body">{{ $type->description }}</div>
+                   {{--      <div class="card-body">{{ $type->description }}</div> --}}
                     </div>
                 </div>
             @endforeach
