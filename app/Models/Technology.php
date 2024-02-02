@@ -5,12 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+
 class Technology extends Model
 {
     use HasFactory;
 
     public function posts()
     {
-        return $this->belongToMany(Post::class);
+        return $this->belongsToMany(Post::class);
     }
 }
