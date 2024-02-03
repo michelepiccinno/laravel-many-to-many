@@ -17,7 +17,6 @@
         <div class="row">
             <form action="{{ route('admin.posts.store') }}" method="POST">
                 @csrf
-                {{-- name description --}}
                 <div class="mb-3">
                     <label for="name" class="form-label">Nome Progetto</label>
                     <input type="text" class="form-control @error('name') is-invalid @enderror" id="name"
@@ -46,6 +45,14 @@
                     @error('type')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
+                </div>
+                <div class="mb-3">
+                    <label for="technology" class="form-label">Tecnologia utilizzata</label>
+                    <select class="form-select" name="technologies[]" id="technologies" multiple>
+                        @foreach ($technologies as $technology)
+                            <option value="{{ $technology->id }}">{{ $technology->name }}</option>
+                        @endforeach
+                    </select>
                 </div>
                 <button type="submit" class="btn btn-primary">Inserisci</button>
             </form>

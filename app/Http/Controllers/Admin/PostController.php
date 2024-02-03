@@ -27,7 +27,8 @@ class PostController extends Controller
     public function create()
     {
         $types = Type::all();
-        return view("admin.posts.create", compact("types"));
+        $technologies = Technology::all();
+        return view("admin.posts.create", compact("types", "technologies"));
     }
 
     /**
@@ -40,11 +41,11 @@ class PostController extends Controller
         $newPost = new Post();
         $newPost->fill($validati);
         $newPost->save();
-
+        if ($request->technologies) {
+            $newPost->technologies()->attach($request->technologies);
+        }
         // return redirect()->route("admin.posts.show", $newPost->id);
         return redirect()->route("admin.posts.index");
-      
-      
     }
 
     /**

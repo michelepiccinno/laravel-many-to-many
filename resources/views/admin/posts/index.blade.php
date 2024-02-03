@@ -10,11 +10,13 @@
                         <div class="card-body">
                             <h5>{{ $post->description }}</h5>
                             <p>{{ $post->type ? $post->type->name : 'senza type' }}</p>
-                            @forelse ($post->technologies as $technology)
-                                <span class="badge text-bg-secondary"> {{ $technology->name }}</span>
-                            @empty
-                                <span>Nessuna tecnologia inserita</span>
-                            @endforelse
+                            @if (count($post->technologies) > 0)
+                                @forelse ($post->technologies as $technology)
+                                    <span class="badge text-bg-secondary"> {{ $technology->name }}</span>
+                                @empty
+                                    <span>Nessuna tecnologia inserita</span>
+                                @endforelse
+                            @endif
                         </div>
                     </div>
                 </div>
