@@ -37,7 +37,6 @@ class PostController extends Controller
     public function store(PostRequest $request)
     {
         $validati = $request->validated();
-
         $newPost = new Post();
         $newPost->fill($validati);
         $newPost->save();
@@ -61,7 +60,10 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        //
+        /*ci serve per passare a edit l'elenco di tipi disponibili per un eventuale modifica del dato*/
+        $types = Type::all();
+        $technologies = Type::all();
+        return view("admin.posts.edit", compact("post", "types", "technologies"));
     }
 
     /**
@@ -69,7 +71,9 @@ class PostController extends Controller
      */
     public function update(PostRequest $request, Post $post)
     {
-        //
+        $dati_validati = $request->validated();  
+        $post->update($dati_validati);
+        return redirect()->route('admin.posts.index', $post->id);
     }
 
     /**

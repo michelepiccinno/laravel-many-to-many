@@ -18,6 +18,9 @@
                                 @endforelse
                             @endif
                         </div>
+                        <div>
+                            <a class="btn btn-warning ms-1 mb-1" href="{{ route('admin.posts.edit', $post->id) }}">Modifica</a>
+                        </div>
                     </div>
                 </div>
             @endforeach
