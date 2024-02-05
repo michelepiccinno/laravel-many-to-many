@@ -61,7 +61,7 @@ echo '</pre>';
                     <label for="technology" class="form-label">Tecnologia utilizzata</label>
                     <select class="form-select" name="technologies[]" id="technologies" multiple>
                             @foreach ($technologies as $technology)
-                            <option value="{{ $technology->id }}">{{ $technology->name }}</option>
+                            <option value="{{ $technology->id }}" ( $technology->name = "E-commerce" )>{{ $technology->name }}</option>
                         @endforeach 
                     </select>
                 </div>
