@@ -52,7 +52,8 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-        //
+        $posts = Post::all();
+        return view("admin.posts.show", compact("post"));
     }
 
     /**
@@ -74,7 +75,7 @@ class PostController extends Controller
         $data = $request->all(); 
         $post->update($data);
        /*  dd(var_dump($data)); */
-        $post->technologies()->sync([1,3]);
+        $post->technologies()->sync($request->technologies);
         return redirect()->route('admin.posts.index', $post->id);
     }
 

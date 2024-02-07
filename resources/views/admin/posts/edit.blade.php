@@ -74,7 +74,7 @@ echo '</pre>';
 
  <pre>
     @php
-        var_dump($post->technologies);
+        var_dump($post);
     @endphp
  </pre>
 
