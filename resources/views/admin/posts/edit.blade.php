@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-{{--
+    {{--
 @php
 /*Stampiamo i dati in arrivo */
 echo '<pre>';
@@ -60,13 +60,22 @@ echo '</pre>';
                 <div class="mb-3">
                     <label for="technology" class="form-label">Tecnologia utilizzata</label>
                     <select class="form-select" name="technologies[]" id="technologies" multiple>
-                            @foreach ($technologies as $technology)
-                            <option value="{{ $technology->id }}" ( $technology->name = "E-commerce" )>{{ $technology->name }}</option>
-                        @endforeach 
+                        @foreach ($technologies as $technology)
+                            <option value="{{ $technology->id }}"
+                                {{ $post->technologies->contains($technology->id) ? 'selected' : '' }}>{{ $technology->name }}
+                            </option>
+                        @endforeach
                     </select>
                 </div>
                 <button type="submit" class="btn btn-primary">Applica Modifiche</button>
             </form>
         </div>
     </div>
+
+ <pre>
+    @php
+        var_dump($post->technologies);
+    @endphp
+ </pre>
+
 @endsection

@@ -62,7 +62,7 @@ class PostController extends Controller
     {
         /*ci serve per passare a edit l'elenco di tipi disponibili per un eventuale modifica del dato*/
         $types = Type::all();
-        $technologies = Type::all();
+        $technologies = Technology::all();
         return view("admin.posts.edit", compact("post", "types", "technologies"));
     }
 
@@ -71,8 +71,10 @@ class PostController extends Controller
      */
     public function update(PostRequest $request, Post $post)
     {
-        $dati_validati = $request->validated();  
-        $post->update($dati_validati);
+        $data = $request->all(); 
+        $post->update($data);
+       /*  dd(var_dump($data)); */
+        $post->technologies()->sync([1,3]);
         return redirect()->route('admin.posts.index', $post->id);
     }
 
