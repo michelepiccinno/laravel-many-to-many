@@ -49,7 +49,7 @@ echo '</pre>';
                         @foreach ($types as $type)
                             <option value="{{ old('type_id') ?? $type->id }}"
                                 {{ $post->type->id == $type->id ? 'selected="selected"' : '' }}>
-                                {{ old('type_id') ?? $type->name }}
+                                {{ old('type_name') ?? $type->name }}
                             </option>
                         @endforeach
                     </select>
